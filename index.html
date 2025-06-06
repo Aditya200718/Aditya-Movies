@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADITYA MOVIES</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://drive.google.com/uc?export=view&id=1MMXI8fTIWQCnYfcUOLILjVrOTP3L0buG');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      flex-direction: column;
+      animation: fadeIn 1.5s ease-in-out;
+      gap: 20px; /* Controls vertical spacing */
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid white;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 1em;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>WELCOME TO<br>ADITYA MOVIES</h1>
+  <div class="btn-group">
+    <button class="btn" onclick="location.href='movies.html'">Movies</button>
+    <button class="btn" onclick="location.href='series.html'">Series</button>
+  </div>
+</body>
+</html>

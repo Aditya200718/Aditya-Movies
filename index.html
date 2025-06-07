@@ -1,184 +1,138 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ADITYA MOVIES</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
-
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.8);
+    body {
+      background: url('https://i.ibb.co/tMH3zL6B/Aditya-Movies.jpg') no-repeat center center fixed;
+      background-size: cover;
+      backdrop-filter: blur(5px);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
-
-    .header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      padding-top: 20px;
+    header {
+      text-align: center;
+      padding: 20px 0 10px;
     }
-
-    .logo {
-      width: 100px;
-      height: 100px;
+    header img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      object-fit: cover;
     }
-
-    h1 {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 10px 0 20px;
-    }
-
-    .nav button {
-      background-color: rgba(255, 255, 255, 0.05);
+    header h1 {
       color: white;
-      border: 2px solid transparent;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      margin-top: 10px;
+      font-size: 26px;
+      text-shadow: 1px 1px 3px black;
     }
-
-    .nav button.active {
-      border-color: white;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .search-bar {
+    nav {
       display: flex;
       justify-content: center;
-      margin: 10px 0;
-    }
-
-    .search-bar input {
+      background-color: rgba(0, 0, 0, 0.8);
       padding: 10px;
-      font-size: 15px;
-      width: 80%;
-      max-width: 400px;
-      border: none;
-      border-radius: 10px;
-      background-color: rgba(255, 255, 255, 0.1);
+      gap: 15px;
+    }
+    nav a {
       color: white;
+      text-decoration: none;
+      padding: 8px 15px;
+      border-radius: 5px;
     }
-
-    .content {
-      text-align: center;
-      padding: 0 20px;
-      margin: 20px 0 40px;
+    nav a.active,
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid white;
+    }
+    .section {
       display: none;
+      padding: 30px;
+      color: white;
+      flex: 1;
     }
-
-    .content.show {
+    .section.active {
       display: block;
     }
-
-    .essay-box {
-      background-color: rgba(255, 255, 255, 0.08);
+    .essay {
+      background-color: rgba(0, 0, 0, 0.6);
       padding: 20px;
-      border-radius: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-size: 15px;
+      border-radius: 10px;
       line-height: 1.6;
+      font-size: 16px;
+      max-width: 600px;
+      margin: 20px auto;
     }
-
-    .footer {
+    .search-box {
+      margin: 30px auto;
       text-align: center;
-      font-size: 14px;
-      padding: 10px 0 20px;
-      opacity: 0.6;
+    }
+    .search-box input[type="text"] {
+      padding: 10px;
+      width: 300px;
+      border: none;
+      border-radius: 5px;
+    }
+    .search-box button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      color: white;
+      padding: 10px 0;
+      position: sticky;
+      top: 100%;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <div>
-      <div class="header">
-        <img src="logo.png" alt="Logo" class="logo" />
-        <h1>WELCOME TO ADITYA MOVIES</h1>
-        <div class="nav">
-          <button id="homeBtn" onclick="showSection('home')">Home</button>
-          <button id="moviesBtn" onclick="showSection('movies')">Movies</button>
-          <button id="seriesBtn" onclick="showSection('series')">Series</button>
-        </div>
-      </div>
-
-      <div id="searchBar" class="search-bar" style="display: none;">
-        <input id="searchInput" type="text" placeholder="Search Movies" />
-      </div>
-
-      <div class="content" id="homeEssay">
-        <div class="essay-box">
-          Welcome to <strong>ADITYA MOVIES</strong><br>
-          Here you will watch Movies and Series of all genres – Action, Adventure, Horror, Thriller, Drama, and more.<br>
-          Experience high-quality entertainment anytime, anywhere.<br>
-          Enjoy curated content handpicked just for you.<br>
-          Stay tuned for the latest releases.
-        </div>
-      </div>
+  <header>
+    <img src="https://i.ibb.co/tMH3zL6B/Aditya-Movies.jpg" alt="Aditya-Movies" />
+    <h1>WELCOME TO ADITYA MOVIES</h1>
+  </header>  <nav>
+    <a href="#" class="nav-btn active" onclick="showSection('home', this)">Home</a>
+    <a href="#" class="nav-btn" onclick="showSection('movies', this)">Movies</a>
+    <a href="#" class="nav-btn" onclick="showSection('series', this)">Series</a>
+  </nav>  <div class="section active" id="home">
+    <div class="essay">
+      <p><strong>Welcome to ADITYA MOVIES</strong></p>
+      <p>Here you will watch Movies and Series of all genres – Action, Adventure, Horror, Thriller, Drama, and more.</p>
+      <p>Experience high-quality entertainment anytime, anywhere.</p>
+      <p>Enjoy curated content handpicked just for you.</p>
+      <p>Stay tuned for the latest releases.</p>
     </div>
-
-    <div class="footer">
-      © 2025 ADITYA MOVIES. All rights reserved.
+  </div>  <div class="section" id="movies">
+    <div class="search-box">
+      <input type="text" placeholder="Search Movies" />
+      <button>Search</button>
     </div>
-  </div>
+  </div>  <div class="section" id="series">
+    <div class="search-box">
+      <input type="text" placeholder="Search Series" />
+      <button>Search</button>
+    </div>
+  </div>  <footer>
+    &copy; 2025 ADITYA MOVIES. All rights reserved.
+  </footer>  <script>
+    function showSection(id, element) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
 
-  <script>
-    const homeBtn = document.getElementById('homeBtn');
-    const moviesBtn = document.getElementById('moviesBtn');
-    const seriesBtn = document.getElementById('seriesBtn');
-    const searchBar = document.getElementById('searchBar');
-    const searchInput = document.getElementById('searchInput');
-    const homeEssay = document.getElementById('homeEssay');
-
-    function clearActive() {
-      homeBtn.classList.remove('active');
-      moviesBtn.classList.remove('active');
-      seriesBtn.classList.remove('active');
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
     }
-
-    function showSection(section) {
-      clearActive();
-      if (section === 'home') {
-        homeBtn.classList.add('active');
-        searchBar.style.display = 'none';
-        homeEssay.classList.add('show');
-      } else if (section === 'movies') {
-        moviesBtn.classList.add('active');
-        searchBar.style.display = 'flex';
-        searchInput.placeholder = 'Search Movies';
-        homeEssay.classList.remove('show');
-      } else if (section === 'series') {
-        seriesBtn.classList.add('active');
-        searchBar.style.display = 'flex';
-        searchInput.placeholder = 'Search Series';
-        homeEssay.classList.remove('show');
-      }
-    }
-
-    // Load Home by default
-    showSection('home');
-  </script>
-</body>
+  </script></body>
 </html>

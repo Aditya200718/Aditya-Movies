@@ -3,161 +3,177 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aditya Movies</title>
+  <title>ADITYA MOVIES</title>
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      color: #000;
-      text-align: center;
-      position: relative;
-      min-height: 100vh;
-      padding-bottom: 60px;
       background: url('https://i.ibb.co/tMH3zL6B/Aditya-Movies.jpg') no-repeat center center fixed;
       background-size: cover;
+      position: relative;
     }
 
     body::before {
-      content: '';
+      content: "";
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      background: inherit;
-      filter: blur(6px);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
       z-index: -1;
     }
 
-    .dp-img {
-      width: 100px;
-      height: 100px;
+    header {
+      text-align: center;
+      padding: 20px 10px 10px;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      border: 3px solid #000;
-      margin: 20px auto 10px;
       object-fit: cover;
+      border: 3px solid white;
     }
 
     h1 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      background-color: rgba(255, 255, 255, 0.7);
-      display: inline-block;
-      padding: 5px 15px;
-      border-radius: 8px;
+      color: white;
+      font-size: 28px;
+      margin-top: 10px;
+      text-shadow: 1px 1px 5px black;
     }
 
-    .buttons {
-      margin: 20px;
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 20px;
     }
 
-    .btn {
+    nav a {
+      color: white;
       padding: 10px 20px;
-      margin: 10px;
-      font-size: 16px;
-      border: none;
-      background-color: #000;
-      color: #fff;
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.05);
       border-radius: 5px;
-      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
     }
 
-    .btn:hover {
-      background-color: #333;
+    nav a.active, nav a:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: white;
     }
 
     .section {
       display: none;
-      margin-top: 20px;
+      padding: 20px;
+      color: white;
+      text-align: center;
     }
 
-    .active {
+    #home {
       display: block;
     }
 
-    .search-bar {
-      margin: 20px auto;
+    .essay {
+      margin-top: 30px;
+      font-size: 18px;
+      max-width: 800px;
+      margin-inline: auto;
+      line-height: 1.6;
+    }
+
+    .search-container {
+      margin-top: 30px;
     }
 
     input[type="text"] {
       padding: 10px;
-      width: 80%;
-      max-width: 400px;
-      font-size: 14px;
+      width: 60%;
+      border: none;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      font-size: 16px;
     }
 
-    .placeholder {
-      padding: 20px;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 8px;
-      width: 80%;
-      margin: auto;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    .footer {
+      text-align: center;
+      color: white;
+      margin-top: 50px;
+      padding-bottom: 20px;
+      font-size: 14px;
     }
 
-    footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background-color: #fff;
-      padding: 10px;
-      font-size: 13px;
-      box-shadow: 0 -1px 3px rgba(0,0,0,0.1);
+    @media (max-width: 768px) {
+      input[type="text"] {
+        width: 80%;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .essay {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <img src="https://i.ibb.co/tMH3zL6B/Aditya-Movies.jpg" alt="DP" />
+    <h1>WELCOME TO ADITYA MOVIES</h1>
+    <nav>
+      <a href="#" class="active" onclick="showSection('home', this)">Home</a>
+      <a href="#" onclick="showSection('movies', this)">Movies</a>
+      <a href="#" onclick="showSection('series', this)">Series</a>
+    </nav>
+  </header>
 
-  <!-- DP & Heading -->
-  <img src="https://i.ibb.co/tMH3zL6B/Aditya-Movies.jpg" class="dp-img" alt="Aditya DP" />
-  <h1>WELCOME TO ADITYA MOVIES</h1>
-
-  <!-- Buttons -->
-  <div class="buttons">
-    <button class="btn" onclick="showSection('home')">Home</button>
-    <button class="btn" onclick="showSection('movies')">Movies</button>
-    <button class="btn" onclick="showSection('series')">Series</button>
-  </div>
-
-  <!-- Sections -->
-  <div id="home" class="section active">
-    <div class="placeholder">
-      <p>This is the Home section. Choose Movies or Series above.</p>
+  <div id="home" class="section">
+    <div class="essay">
+      Welcome to <strong>ADITYA MOVIES</strong><br>
+      Here you will watch Movies and Series of all genres – Action, Adventure, Horror, Thriller, Drama, and more.<br>
+      Experience high-quality entertainment anytime, anywhere.<br>
+      Enjoy curated content handpicked just for you.<br>
+      Stay tuned for the latest releases.
     </div>
   </div>
 
   <div id="movies" class="section">
-    <div class="search-bar">
-      <input type="text" placeholder="Search Movies..." />
-    </div>
-    <div class="placeholder">
-      <p>Movies will appear here soon.</p>
+    <div class="search-container">
+      <input type="text" placeholder="Search Movies" />
     </div>
   </div>
 
   <div id="series" class="section">
-    <div class="search-bar">
-      <input type="text" placeholder="Search Series..." />
-    </div>
-    <div class="placeholder">
-      <p>Series will appear here soon.</p>
+    <div class="search-container">
+      <input type="text" placeholder="Search Series" />
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>© 2025 ADITYA MOVIES. All Rights Reserved.</footer>
+  <div class="footer">
+    © 2025 ADITYA MOVIES. All rights reserved.
+  </div>
 
-  <!-- JS for Switching -->
   <script>
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+    function showSection(id, element) {
+      const sections = document.querySelectorAll(".section");
+      sections.forEach(section => section.style.display = "none");
+
+      document.getElementById(id).style.display = "block";
+
+      document.querySelectorAll("nav a").forEach(link => link.classList.remove("active"));
+      element.classList.add("active");
     }
   </script>
-
 </body>
 </html>

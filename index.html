@@ -4,135 +4,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ADITYA MOVIES</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
     body {
+      margin: 0;
+      font-family: Arial, sans-serif;
       background: url('https://i.ibb.co/tMH3zL6B/Aditya-Movies.jpg') no-repeat center center fixed;
       background-size: cover;
-      backdrop-filter: blur(5px);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      text-align: center;
-      padding: 20px 0 10px;
-    }
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-    }
-    header h1 {
       color: white;
-      margin-top: 10px;
-      font-size: 26px;
-      text-shadow: 1px 1px 3px black;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 10px;
-      gap: 15px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-    }
-    nav a.active,
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-      border: 2px solid white;
-    }
-    .section {
-      display: none;
-      padding: 30px;
-      color: white;
-      flex: 1;
-    }
-    .section.active {
-      display: block;
-    }
-    .essay {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
-      line-height: 1.6;
-      font-size: 16px;
-      max-width: 600px;
-      margin: 20px auto;
-    }
-    .search-box {
-      margin: 30px auto;
-      text-align: center;
-    }
-    .search-box input[type="text"] {
-      padding: 10px;
-      width: 300px;
-      border: none;
-      border-radius: 5px;
-    }
-    .search-box button {
-      padding: 10px 20px;
-      margin-left: 10px;
-      background-color: white;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    footer {
-      background-color: rgba(0, 0, 0, 0.8);
-      text-align: center;
-      color: white;
-      padding: 10px 0;
-      position: sticky;
-      top: 100%;
-    }
+    }.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+header {
+  text-align: center;
+  padding-top: 20px;
+}
+
+header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+h1 {
+  margin: 10px 0;
+  font-size: 28px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  gap: 20px;
+}
+
+nav a {
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+nav a.active, nav a:hover {
+  border-color: white;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.section {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.section.active {
+  display: block;
+}
+
+.essay-box {
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.essay-box p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.search-box {
+  margin: 20px auto;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.search-box input::placeholder {
+  color: #ccc;
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <img src="https://i.ibb.co/tMH3zL6B/Aditya-Movies.jpg" alt="Aditya-Movies" />
-    <h1>WELCOME TO ADITYA MOVIES</h1>
-  </header>  <nav>
-    <a href="#" class="nav-btn active" onclick="showSection('home', this)">Home</a>
-    <a href="#" class="nav-btn" onclick="showSection('movies', this)">Movies</a>
-    <a href="#" class="nav-btn" onclick="showSection('series', this)">Series</a>
-  </nav>  <div class="section active" id="home">
-    <div class="essay">
-      <p><strong>Welcome to ADITYA MOVIES</strong></p>
-      <p>Here you will watch Movies and Series of all genres – Action, Adventure, Horror, Thriller, Drama, and more.</p>
-      <p>Experience high-quality entertainment anytime, anywhere.</p>
-      <p>Enjoy curated content handpicked just for you.</p>
-      <p>Stay tuned for the latest releases.</p>
-    </div>
-  </div>  <div class="section" id="movies">
-    <div class="search-box">
-      <input type="text" placeholder="Search Movies" />
-      <button>Search</button>
-    </div>
-  </div>  <div class="section" id="series">
-    <div class="search-box">
-      <input type="text" placeholder="Search Series" />
-      <button>Search</button>
-    </div>
+  <div class="overlay">
+    <header>
+      <img src="https://i.ibb.co/tMH3zL6B/Aditya-Movies.jpg" alt="Aditya-Movies" />
+      <h1>WELCOME TO ADITYA MOVIES</h1>
+    </header><nav>
+  <a href="#" class="active" onclick="showSection('home', this)">Home</a>
+  <a href="#" onclick="showSection('movies', this)">Movies</a>
+  <a href="#" onclick="showSection('series', this)">Series</a>
+</nav>
+
+<div id="home" class="section active">
+  <div class="essay-box">
+    <p>Welcome to ADITYA MOVIES</p>
+    <p>Here you will watch Movies and Series of all genres – Action, Adventure, Horror, Thriller, Drama, and more.</p>
+    <p>Experience high-quality entertainment anytime, anywhere.</p>
+    <p>Enjoy curated content handpicked just for you.</p>
+    <p>Stay tuned for the latest releases.</p>
+  </div>
+</div>
+
+<div id="movies" class="section">
+  <div class="search-box">
+    <input type="text" placeholder="Search Movies" />
+  </div>
+</div>
+
+<div id="series" class="section">
+  <div class="search-box">
+    <input type="text" placeholder="Search Series" />
+  </div>
+</div>
+
   </div>  <footer>
     &copy; 2025 ADITYA MOVIES. All rights reserved.
   </footer>  <script>
-    function showSection(id, element) {
+    function showSection(id, el) {
       document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
 
-      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-      element.classList.add('active');
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      el.classList.add('active');
     }
   </script></body>
 </html>

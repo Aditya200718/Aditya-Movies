@@ -15,7 +15,7 @@
     }
 
     .overlay {
-      background-color: rgba(0, 0, 0, 0.8); /* 80% highlight */
+      background-color: rgba(0, 0, 0, 0.8);
       width: 100%;
       min-height: 100%;
       padding: 30px 20px;
@@ -39,7 +39,7 @@
     .header-box h1 {
       margin: 0;
       font-size: 2rem;
-      color: #ffffff; /* changed from yellow to white */
+      color: #ffffff;
     }
 
     .poster {
@@ -98,6 +98,7 @@
       border-radius: 6px;
       text-decoration: none;
       text-align: center;
+      cursor: pointer;
     }
 
     footer {
@@ -122,7 +123,7 @@
       <img src="https://i.ibb.co/QVQDx3L/Leo-Poster.jpg" alt="LEO Poster" class="poster" />
       <div class="title">LEO</div>
 
-      <p class="info-line"><span class="label">Cast -</span> Thalapathy Vijay, Sanjay Dutt, Arjun Sarja, Trisha Krishnan, Madonna Sebastian, Gautham Vasudev Menon, Mysskin And<strong>Others</strong></p>
+      <p class="info-line"><span class="label">Cast -</span> Thalapathy Vijay, Sanjay Dutt, Arjun Sarja, Trisha Krishnan, Madonna Sebastian, Gautham Vasudev Menon, Mysskin and Others</p>
 
       <p class="info-line"><span class="label">Director -</span> Lokesh Kanagaraj</p>
 
@@ -144,7 +145,8 @@
         </script>
       </div>
 
-      <a href="index.html#movies" class="back-button">BACK</a>
+      <a onclick="history.back()" class="back-button">BACK</a>
+
       <footer>&copy; 2025 ADITYA MOVIES. All rights reserved.</footer>
     </div>
   </div>

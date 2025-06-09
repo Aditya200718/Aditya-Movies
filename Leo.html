@@ -5,159 +5,148 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LEO - ADITYA MOVIES</title>
   <style>
-    body {
+    body, html {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      height: 100%;
       background: url('https://i.ibb.co/QVQDx3L/Leo-Poster.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.8); /* 80% highlight */
+      width: 100%;
+      min-height: 100%;
+      padding: 30px 20px;
+      box-sizing: border-box;
     }
 
     .container {
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 20px;
-      margin: 30px auto;
-      max-width: 800px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+      max-width: 700px;
+      margin: auto;
+      color: white;
     }
 
-    .welcome {
+    .header-box {
+      background-color: #222;
+      padding: 20px;
       text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #ffcc00;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    .header-box h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #ffffff; /* changed from yellow to white */
     }
 
     .poster {
-      text-align: center;
-    }
-
-    .poster img {
-      max-width: 100%;
+      width: 100%;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+      margin-bottom: 20px;
     }
 
-    .movie-name {
-      font-size: 2rem;
-      font-weight: bold;
+    .title {
       text-align: center;
-      margin-top: 10px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #f1f1f1;
     }
 
-    .details {
-      margin-top: 20px;
-      line-height: 1.8;
-      font-size: 1.1rem;
+    .info-line {
+      margin: 12px 0;
+      font-size: 1.05rem;
     }
 
-    .details strong {
-      color: #ffcc00;
+    .label {
+      color: #00aaff;
+      font-weight: bold;
     }
 
-    .storyline {
-      margin-top: 20px;
-    }
-
-    .download-button {
+    .download-btn {
       display: block;
+      width: 250px;
+      margin: 30px auto;
+      padding: 14px 0;
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
       text-align: center;
-      margin-top: 30px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
     }
 
-    .download-button a {
-      display: inline-block;
-      background-color: #ffcc00;
-      color: #000;
-      padding: 12px 24px;
-      font-size: 1.1rem;
+    .download-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .back-button {
+      display: block;
+      width: fit-content;
+      margin: 30px auto;
+      background-color: #444;
+      color: white;
       font-weight: bold;
+      padding: 12px 24px;
       border-radius: 6px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    }
-
-    .download-button a:hover {
-      background-color: #e6b800;
-    }
-
-    .back-link {
-      display: block;
       text-align: center;
-      margin: 40px auto 20px;
-    }
-
-    .back-link a {
-      background-color: #000;
-      color: #fff;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    .back-link a:hover {
-      background-color: #333;
     }
 
     footer {
       text-align: center;
-      padding: 15px;
-      background-color: rgba(0, 0, 0, 0.6);
+      color: #bbb;
+      font-size: 0.9rem;
+      margin-top: 30px;
+    }
+
+    .comment-box {
       margin-top: 40px;
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    <div class="container">
+      <div class="header-box">
+        <h1>WELCOME TO ADITYA MOVIES</h1>
+      </div>
 
-  <div class="container">
-    <div class="welcome">WELCOME TO ADITYA MOVIES</div>
+      <img src="https://i.ibb.co/QVQDx3L/Leo-Poster.jpg" alt="LEO Poster" class="poster" />
+      <div class="title">LEO</div>
 
-    <div class="poster">
-      <img src="https://i.ibb.co/QVQDx3L/Leo-Poster.jpg" alt="LEO Poster" />
-    </div>
+      <p class="info-line"><span class="label">Cast -</span> Thalapathy Vijay, Sanjay Dutt, Arjun Sarja, Trisha Krishnan, Madonna Sebastian, Gautham Vasudev Menon, Mysskin, <strong>Others</strong></p>
 
-    <div class="movie-name">LEO</div>
+      <p class="info-line"><span class="label">Director -</span> Lokesh Kanagaraj</p>
 
-    <div class="details">
-      <p><strong>Cast:</strong> Thalapathy Vijay, Trisha, Sanjay Dutt, Arjun Sarja, Gautham Vasudev Menon, Priya Anand, Mysskin, Mathew Thomas, Madonna Sebastian</p>
-      <p><strong>Director:</strong> Lokesh Kanagaraj</p>
-      <p><strong>Genre:</strong> Action, Thriller</p>
-      <p><strong>Release Year:</strong> 2023</p>
-    </div>
+      <p class="info-line"><span class="label">Genre -</span> Action, Thriller</p>
 
-    <div class="details storyline">
-      <strong>Storyline:</strong>
-      <p>
-        Leo is a high-octane action thriller centered around a bakery owner with a dark past. When his violent history is uncovered, chaos ensues as he’s forced to return to a life he tried to leave behind. Full of intense stunts, gripping action, and powerful performances, Leo is a must-watch for every Vijay fan.
-      </p>
-    </div>
+      <p class="info-line"><span class="label">Release Date -</span> October 19, 2023</p>
 
-    <div class="download-button">
-      <a href="https://pixeldrain.com/api/file/aP2U7WRK?download" download="LEO.mkv">Download Now</a>
-    </div>
+      <p class="info-line"><span class="label">Storyline -</span> In the peaceful hills of Himachal Pradesh, Parthiban leads a quiet life running a café and rescuing wild animals. But his hidden past surfaces when a violent café attack forces him to kill, drawing media attention and suspicion. Soon, underworld figures Anthony and Harold Das insist Parthiban is actually Leo Das, their lost son and a deadly gangster. As the mystery deepens, Parthiban must face brutal truths and protect his family while confronting a past that refuses to stay buried. A gritty tale of identity, survival, and redemption.</p>
 
-    <div id="comments" style="margin-top: 40px;">
-      <script src="https://utteranc.es/client.js"
-        repo="Aditya200718/Aditya-Movies"
-        issue-term="pathname"
-        theme="github-dark"
-        crossorigin="anonymous"
-        async>
-      </script>
-    </div>
+      <a href="https://pixeldrain.com/u/aP2U7WRK" download="LEO.mkv" class="download-btn">DOWNLOAD NOW</a>
 
-    <div class="back-link">
-      <a href="index.html">Back</a>
+      <div class="comment-box">
+        <script src="https://utteranc.es/client.js"
+          repo="Aditya200718/Aditya-Movies"
+          issue-term="pathname"
+          theme="github-dark"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
+
+      <a href="index.html#movies" class="back-button">BACK</a>
+      <footer>&copy; 2025 ADITYA MOVIES. All rights reserved.</footer>
     </div>
   </div>
-
-  <footer>
-    <p>&copy; 2025 ADITYA MOVIES. All rights reserved.</p>
-  </footer>
-
 </body>
 </html>

@@ -7,109 +7,157 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: url('https://i.ibb.co/QVQDx3L/Leo-Poster.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: white;
+      color: #fff;
     }
+
     .container {
-      background-color: rgba(0, 0, 0, 0.78);
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 20px;
       margin: 30px auto;
       max-width: 800px;
-      padding: 20px;
-      border-radius: 12px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
     }
-    h1 {
+
+    .welcome {
       text-align: center;
+      font-size: 1.8rem;
       font-weight: bold;
-      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
     }
+
     .poster {
       text-align: center;
-      margin-bottom: 10px;
     }
+
     .poster img {
-      width: 100%;
-      max-width: 300px;
+      max-width: 100%;
       border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
     }
-    .poster p {
-      font-size: 1.5rem;
+
+    .movie-name {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
       margin-top: 10px;
-      font-weight: bold;
     }
-    .info p {
-      font-size: 1.1rem;
-      margin: 10px 0;
-      font-weight: 600;
-    }
-    .download-box {
+
+    .details {
       margin-top: 20px;
-      background-color: #ffc107;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    .details strong {
+      color: #ffcc00;
+    }
+
+    .storyline {
+      margin-top: 20px;
+    }
+
+    .download-button {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .download-button a {
+      display: inline-block;
+      background-color: #ffcc00;
       color: #000;
-      padding: 15px;
-      text-align: center;
+      padding: 12px 24px;
+      font-size: 1.1rem;
       font-weight: bold;
-      border-radius: 8px;
-    }
-    .back-button {
-      text-align: center;
-      margin-top: 25px;
-    }
-    .back-button button {
-      background-color: white;
-      color: black;
-      font-weight: bold;
-      border: none;
-      padding: 10px 25px;
-      font-size: 1rem;
       border-radius: 6px;
-      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
+
+    .download-button a:hover {
+      background-color: #e6b800;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 40px auto 20px;
+    }
+
+    .back-link a {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .back-link a:hover {
+      background-color: #333;
+    }
+
     footer {
       text-align: center;
-      margin-top: 40px;
       padding: 15px;
-      background: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.6);
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+
   <div class="container">
-    <h1>ADITYA MOVIES</h1>
+    <div class="welcome">WELCOME TO ADITYA MOVIES</div>
 
     <div class="poster">
       <img src="https://i.ibb.co/QVQDx3L/Leo-Poster.jpg" alt="LEO Poster" />
-      <p>LEO</p>
     </div>
 
-    <div class="info">
-      <p><strong>Cast:</strong> Thalapathy Vijay, Trisha, Sanjay Dutt, Arjun, Gautham Vasudev Menon, Priya Anand, Mysskin, Madonna Sebastian, Mathew Thomas, Mansoor Ali Khan</p>
+    <div class="movie-name">LEO</div>
+
+    <div class="details">
+      <p><strong>Cast:</strong> Thalapathy Vijay, Trisha, Sanjay Dutt, Arjun Sarja, Gautham Vasudev Menon, Priya Anand, Mysskin, Mathew Thomas, Madonna Sebastian</p>
       <p><strong>Director:</strong> Lokesh Kanagaraj</p>
       <p><strong>Genre:</strong> Action, Thriller</p>
-      <p><strong>Story:</strong> LEO is an intense action thriller following a man who is forced to confront his dark past as he becomes the target of a ruthless gang. Explosive action meets gripping narrative!</p>
+      <p><strong>Release Year:</strong> 2023</p>
     </div>
 
-    <div class="download-box">
-      DOWNLOAD COMING SOON
+    <div class="details storyline">
+      <strong>Storyline:</strong>
+      <p>
+        Leo is a high-octane action thriller centered around a bakery owner with a dark past. When his violent history is uncovered, chaos ensues as he’s forced to return to a life he tried to leave behind. Full of intense stunts, gripping action, and powerful performances, Leo is a must-watch for every Vijay fan.
+      </p>
     </div>
 
-    <div id="comments"></div>
-    <script src="https://utteranc.es/client.js"
+    <div class="download-button">
+      <a href="https://pixeldrain.com/api/file/aP2U7WRK?download" download="LEO.mkv">Download Now</a>
+    </div>
+
+    <div id="comments" style="margin-top: 40px;">
+      <script src="https://utteranc.es/client.js"
         repo="Aditya200718/Aditya-Movies"
         issue-term="pathname"
         theme="github-dark"
         crossorigin="anonymous"
         async>
-    </script>
+      </script>
+    </div>
 
-    <div class="back-button">
-      <button onclick="history.back()">BACK</button>
+    <div class="back-link">
+      <a href="index.html">Back</a>
     </div>
   </div>
 
   <footer>
     <p>&copy; 2025 ADITYA MOVIES. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
